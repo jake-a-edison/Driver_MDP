@@ -1,0 +1,69 @@
+{
+  "name": "demo_app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.5.2",
+    "@stitchfix/bigby-tracker": "^2.6.0",
+    "@stitchfix/daylight-utils": "^2.5.3",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.26.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "algo-install": "rappstar install",
+    "build-and-push": "zync",
+    "deploy": "daylight update-and-deploy $npm_package_name",
+    "deploy-prod": "npm run deploy -- --mode prod",
+    "deploy-staging": "npm run deploy -- --mode staging",
+    "set-daylight-env": "rappstar daylight"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@stitchfix/daylight-cli": "^1.2.1",
+    "@stitchfix/rappstar": "^5.11.0",
+    "@stitchfix/zync": "^1.6.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "prettier": "2.6.0",
+    "pretty-quick": "^3.1.3"
+  },
+  "description": "a demo app for learning",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": "eslint"
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "es5"
+  }
+}
